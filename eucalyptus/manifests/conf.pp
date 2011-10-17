@@ -1,6 +1,10 @@
 class eucalyptus::conf
 {
-  @eucalyptus_config {
+
+  #eucalyptus_config {
+  #  'VNET_MODE2': value => $network_mode;
+  #}
+  eucalyptus_config {
     'VNET_MODE': value => $network_mode;
     'VNET_SUBNET': value => $priv_subnet;
     'VNET_NETMASK': value => $priv_netmask;

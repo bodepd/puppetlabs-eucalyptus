@@ -43,6 +43,8 @@ class eucalyptus::clc {
     content => "$eucakeys_cloud-pk",
     tag => "${cloud_name}",
   }
-  Eucalyptus_config <||>
+
+  Package['eucalyptus-cloud'] -> Eucalyptus_config <||> ~> Service['eucalyptus-cloud']
+
   Exec <<|tag == "$cloud_name"|>>
 }
